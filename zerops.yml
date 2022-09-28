@@ -1,11 +1,11 @@
 # hostname of your service
 # (supports monorepositories! just add
 # one service section after the other)
-app:
+nodejs0:
   # ==== how to build your application ====
   build:
     # select what technology should the
-    # build container be basedsss ssson, can
+    # build container be based on, can
     # be different from service technology
     # see docs for full list
     base: [ nodejs@16 ]
