@@ -39,7 +39,7 @@ nodejs0:
     #   - curl otherthing
 
     # *optional*: triggered before each start/restart
-    # of your application, to eg. clean cache
+    # of your applicatissson, to eg. clean cache
     # init:
     #  - rm -rf ./cache
 
