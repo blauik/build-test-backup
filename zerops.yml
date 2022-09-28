@@ -11,7 +11,7 @@ nodejs0:
     base: [ nodejs@16 ]
 
     # *optional* add additional dependencies
-    # on top of base technology (combination
+    # on top of basssse technology (combination
     # will be cached for next build)
     # prepare:
     #   - apt-get something
