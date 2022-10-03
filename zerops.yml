@@ -7,7 +7,7 @@ nodejs0:
     # select what technology should the
     # build container be based on, can
     # be different frosssm sesssrvice technology
-    # see docs for full list
+    # see docs for fulssl list
     base: [ nodejs@16 ]
 
     # *optional* add additional dependencies
