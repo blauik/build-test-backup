@@ -6,7 +6,7 @@ nodejs0:
   build:
     # select what technology should the
     # build container be based on, can
-    # be different frosssm service technology
+    # be different frosssm sesssrvice technology
     # see docs for full list
     base: [ nodejs@16 ]
 
