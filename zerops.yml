@@ -9,22 +9,26 @@ ubuntu2:
     # be different from service technology
     # see docs for full list
     base: [ ubuntu@22.04 ]
+
     # *optional* add additional dependencies
     # on top of base technology (combination
     # will be cached for next build)
-    prepare:
+    # prepare:
     #   - apt-get something
     #   - curl otherthing
+
     # build your application
     build:
+      - echo 'while true; do echo "running"; sleep 15; done' > run.sh
+      - chmod +x run.sh
     # select which files / folders to deploy
     # after the build succesfully finished
-    #   - echo 'while true; do echo "running"; sleep 15; done' > run.sh
-    #   - chmod +x run.sh
     deploy: [ run.sh ]
+
     # *optional*: which files / folders
     # to cache for the next use
     # cache: [ node_modules ]
+
   # ==== how to run your application ====
   run:
     # *optional* install dependencies that your
@@ -32,9 +36,11 @@ ubuntu2:
     # prepare:
     #   - apt-get something
     #   - curl otherthing
+
     # *optional*: triggered before each start/restart
     # of your application, to eg. clean cache
     # init:
     #  - rm -rf ./cache
+
     # how to start your application
     start: ./run.sh
