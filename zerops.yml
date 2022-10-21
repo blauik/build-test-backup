@@ -1,4 +1,4 @@
-dotnet:
+dotnet0:
   build:
     base:
       - dotnet@6
