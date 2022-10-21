@@ -2,45 +2,45 @@
   # (supports monorepositories! just add
   # one service section after the other)
   dotnet0:
-    # ==== how to build your application ====
+  # ==== how to build your application ====
+  build:
+    # select what technology should the
+    # build container be based on, can
+    # be different from service technology
+    # see docs for full list
+    base: [ dotnet@6 ]
+
+    # *optional* add additional dependencies
+    # on top of base technology (combination
+    # will be cached for next build)
+    # prepare:
+    #   - apt-get something
+    #   - curl otherthing
+
+    # build your application
     build:
-      # select what technology should the
-      # build container be based on, can
-      # be different from service technology
-      # see docs for full list
-      base: [ dotnet@6 ]
+      - dotnet build -o app
 
-      # *optional* add additional dependencies
-      # on top of base technology (combination
-      # will be cached for next build)
-      # prepare:
-      #   - apt-get something
-      #   - curl otherthing
+    # select which files / folders to deploy
+    # after the build successfully finished
+    deploy: [ app ]
 
-      # build your application
-      build:
-        - dotnet build -o app
+    # *optional*: which files / folders
+    # to cache for the next use
+    cache: []
 
-      # select which files / folders to deploy
-      # after the build successfully finished
-      deploy: [ app ]
+  # ==== how to run your application ====
+  run:
+    # *optional* install dependencies that your
+    # runtime service requires (will be cached)
+    # prepare:
+    #   - apt-get something
+    #   - curl otherthing
 
-      # *optional*: which files / folders
-      # to cache for the next use
-      # cache: []
+    # *optional*: triggered before each start/restart
+    # of your application, to eg. clean cache
+    # init:
+    #  - rm -rf ./cache
 
-    # ==== how to run your application ====
-    run:
-      # *optional* install dependencies that your
-      # runtime service requires (will be cached)
-      # prepare:
-      #   - apt-get something
-      #   - curl otherthing
-
-      # *optional*: triggered before each start/restart
-      # of your application, to eg. clean cache
-      # init:
-      #  - rm -rf ./cache
-
-      # how to start your application
+    # how to start your application
     start: cd app && dotnet dnet.dll
