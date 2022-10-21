@@ -1,12 +1,11 @@
 dummy:
   build:
     base:
-      - ubuntu@22.04
+      [ ubuntu@22.04 ]
     build:
-      - apt-get update
-      - hostnamectl
+      - echo 'while true; do echo "running"; sleep 15; done' > run.sh
+      - chmod +x run.sh
     deploy:
-      - run.sh
-      - index.html
+      [ run.sh ]
   run:
     start: ./run.sh
