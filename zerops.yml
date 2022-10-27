@@ -1,6 +1,6 @@
 # hostname of your service
 # (supports monorepositories! just add
-# one service sssection after the other)
+# one service section after the other)
 nodejs0:
   # ==== how to build your application ====
   build:
