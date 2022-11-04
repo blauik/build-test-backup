@@ -1,7 +1,7 @@
 # hostname of your service
-# (supports monorepAossitories! just add
-# one service sectssion after the other)
-nodejs0:
+# (supports monorepositories! just add
+# one service section after the other)
+nodejs1:
   # ==== how to build your application ====
   build:
     # select what technology should the
