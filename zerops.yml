@@ -1,7 +1,7 @@
 # hostname of your service
 # (supports monorepositories! just add
 # one service section after the other)
-nodejs1:
+nodejs0:
   # ==== how to build your application ====
   build:
     # select what technology should the
@@ -34,7 +34,8 @@ nodejs1:
   run:
     # *optional* install dependencies that your
     # runtime service requires (will be cached)
-    # prepare:
+    prepare:
+      - exit 1
     #   - apt-get something
     #   - curl otherthing
 
