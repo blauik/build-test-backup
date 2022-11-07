@@ -19,9 +19,7 @@ nodejs0:
 
     # build your application
     build:
-      - npm i
-      - npm run build
-
+      - exit 1
     # select which files / folders to deploy
     # after the build succesfully finished
     deploy: [ dist, package.json ]
@@ -34,8 +32,7 @@ nodejs0:
   run:
     # *optional* install dependencies that your
     # runtime service requires (will be cached)
-    prepare:
-      - exit 1
+    # prepare:
     #   - apt-get something
     #   - curl otherthing
 
