@@ -1,7 +1,7 @@
 # hostname of your service
 # (supports monorepositories! just add
 # one service section after the other)
-nodejs0:
+nodejs1:
   # ==== how to build your application ====
   build:
     # select what technology should the
@@ -19,7 +19,9 @@ nodejs0:
 
     # build your application
     build:
-      - exit 1
+      - npm i
+      - npm run build
+
     # select which files / folders to deploy
     # after the build succesfully finished
     deploy: [ dist, package.json ]
