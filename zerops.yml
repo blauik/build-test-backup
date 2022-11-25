@@ -1,35 +1,29 @@
 # hostname of your service
 # (supports monorepositories! just add
 # one service section after the other)
-nodejs0:
+golang1:
   # ==== how to build your application ====
   build:
     # select what technology should the
     # build container be based on, can
     # be different from service technology
     # see docs for full list
-    base: [ nodejs@18 ]
-
+    base: [ go@1 ]
     # *optional* add additional dependencies
     # on top of base technology (combination
     # will be cached for next build)
     # prepare:
     #   - apt-get something
     #   - curl otherthing
-
     # build your application
     build:
-      - npm i
-      - npm run build
-
+      - go build -o app main.go
     # select which files / folders to deploy
     # after the build succesfully finished
-    deploy: [ dist, package.json, node_modules ]
-
+    deploy: [ app ]
     # *optional*: which files / folders
     # to cache for the next use
-    cache: [ node_modules ]
-
+    # cache: [ ]
   # ==== how to run your application ====
   run:
     # *optional* install dependencies that your
@@ -37,11 +31,9 @@ nodejs0:
     # prepare:
     #   - apt-get something
     #   - curl otherthing
-
     # *optional*: triggered before each start/restart
     # of your application, to eg. clean cache
     # init:
     #  - rm -rf ./cache
-
     # how to start your application
-    start: npm start
+    start: ./app
